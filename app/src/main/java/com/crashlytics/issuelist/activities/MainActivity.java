@@ -62,8 +62,9 @@ public class MainActivity extends BaseActivity implements ServerListener {
             Map<String, String> map = new HashMap<>();
             map.put("state", "all");
 
-            ServerRequest.with(getApplicationContext())
+            ServerRequest.with(MainActivity.this)
                     .setCallBack(this)
+                    .setProgressDialog(false)
                     .setProgressDialogVisible(true)
                     .setParams(map)
                     .setRequestID(RequestID.REQ_GET_ISSUES)
